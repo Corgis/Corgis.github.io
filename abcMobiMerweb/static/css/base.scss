@@ -1,0 +1,15 @@
+@import 'mixin';
+@import 'reset';
+@import 'animate';
+@import 'iconfont';
+
+.dragscroll {
+	cursor: grab;
+
+	&:active {
+		cursor: grabbing;
+		user-select: none;
+	}
+}
+
+@include scrollbar(5px)
