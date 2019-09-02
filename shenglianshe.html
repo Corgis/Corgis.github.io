@@ -1,0 +1,636 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<title>江苏农村信用社联合社</title>
+
+<base href="http://www.js96008.com:1800/qrcwg/" />
+<base target="_self">
+</base>
+<meta name="viewport"
+	content="width=device-width,height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="http://www.js96008.com:1800/qrcwg/css/viewer.css" rel="stylesheet" type="text/css">
+<link href="http://www.js96008.com:1800/qrcwg/css/reset.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="http://www.js96008.com:1800/qrcwg/css/iview/iview.css">
+<link rel="stylesheet" href="http://www.js96008.com:1800/qrcwg/css/style.css">
+
+<script type="text/javascript" src="http://www.js96008.com:1800/qrcwg/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.js96008.com:1800/qrcwg/js/jquery.chosen.min.js"></script>
+<script type="text/javascript" src="http://www.js96008.com:1800/qrcwg/js/validator.js"></script>
+<script type="text/javascript" src="http://www.js96008.com:1800/qrcwg/js/json2.js"></script>
+<script type="text/javascript" src="http://www.js96008.com:1800/qrcwg/js/viewer.js"></script>
+<script src="http://www.js96008.com:1800/qrcwg/js/vue/vue.js"></script>
+<script src="http://www.js96008.com:1800/qrcwg/js/iview/iview.js"></script>
+
+
+
+<html>
+
+<head>
+</head>
+
+<body>
+
+	<div id="app">
+		<Modal v-model="visible" :mask-closable="false" :closable="false">
+			<p slot="header" style="color:#f60;text-align:center">
+				<i-icon type="information-circled"></i-icon>
+				<span style="color: #444;font-size: 15px;letter-spacing: 5px;text-align: center;">提示</span>
+			</p>
+			<div style="text-align: left;" id="overLimitDiv">
+				<p>{{firstLineMsg}}</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{secondLineMsg}}</p>
+			</div>
+			<div style="text-align: center;" id="noOverLimitDiv">
+				<p>{{alertMsg}}</p>
+			</div>
+			<div slot="footer">
+				<i-button type="success" size="large" long @click="close">确认</i-button>
+			</div>
+		</Modal>
+	</div>
+</body>
+
+<script>
+	var vm = new Vue({
+        el: '#app',
+        data: {
+            visible: false,
+            firstLineMsg: "",
+            secondLineMsg: "",
+            alertMsg: "",
+        },
+        methods: {
+            showOverLimit: function (firstLineMsg,secondLineMsg) {
+                this.firstLineMsg = firstLineMsg;
+                this.secondLineMsg = secondLineMsg;
+                document.getElementById("overLimitDiv").className = "displayBlock";
+                document.getElementById("noOverLimitDiv").className = "displayNone";
+                this.visible = true;
+            },
+            showAlert: function (alertMsg) {
+                this.alertMsg = alertMsg;
+                document.getElementById("overLimitDiv").className = "displayNone";
+                document.getElementById("noOverLimitDiv").className = "displayBlock";
+                this.visible = true;
+            },
+            close: function () {
+                this.visible = false;
+                return true;
+            }
+        }
+    })
+</script>
+
+</html>
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<script src="http://www.js96008.com:1800/qrcwg/js/popups.js"></script>
+	<title>江苏农村信用社联合社</title>
+	<style>
+		.show-list {
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		.show-list a {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			float: right;
+			margin-right: -32px;
+		}
+	</style>
+	<style>
+		.animation::after {
+			content: '';
+			display: block;
+			width: 1px;
+			height: 30px;
+			margin-left: 86%;
+			animation: blink 1s infinite steps(1, start)
+		}
+
+		@keyframes blink {
+			0% {
+				background-color: white;
+			}
+
+			50% {
+				background-color: black;
+			}
+
+			100% {
+				background-color: white;
+			}
+		}
+
+		/**css样式*/
+		.input {
+			width: 200px;
+			height: 24px;
+			line-height: 24px;
+			font-size: 14px;
+			padding: 5px 8px;
+			border: 1px solid #ddd;
+		}
+
+		.input:empty::before {
+			content: attr(placeholder);
+		}
+	</style>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			height: 100%;
+			overflow: hidden;
+		}
+
+		.clearfix:after {
+			content: "\200B";
+			display: block;
+			height: 0;
+			clear: both;
+		}
+
+		.clearfix {
+			*zoom: 1;
+		}
+
+
+		/*IE/7/6*/
+
+		.shuru div::-webkit-scrollbar {
+			width: 0;
+			height: 0;
+			-webkit-transition: 1s;
+		}
+
+		.shuru div::-webkit-scrollbar-thumb {
+			background-color: #a7afb4;
+			background-clip: padding-box;
+			min-height: 28px;
+		}
+
+		.shuru div::-webkit-scrollbar-thumb:hover {
+			background-color: #525252;
+			background-clip: padding-box;
+			min-height: 28px;
+		}
+
+		.shuru div::-webkit-scrollbar-track-piece {
+			background-color: #ccd0d2;
+		}
+
+		.wrap {
+			position: relative;
+			margin: auto;
+			max-width: 640px;
+			min-width: 320px;
+			width: 100%;
+			height: 100%;
+			background: #FFF;
+			overflow: hidden;
+		}
+
+		.layer-content {
+			position: absolute;
+			left: 50%;
+			bottom: -200px;
+			width: 100%;
+			max-width: 640px;
+			height: auto;
+			z-index: 12;
+			-webkit-transform: translateX(-50%);
+			transform: translateX(-50%);
+		}
+
+		/* 输入表单 */
+
+		.edit_cash {
+			display: block;
+			margin-top: 15px;
+			padding: 15px;
+			margin: 0 auto;
+			width: 90%;
+			border: 1px solid #CFCFCF;
+			border-radius: 10px;
+			background-color: #fff;
+		}
+
+		.edit_cash p {
+			font-size: 14px;
+			color: #8D8D8F;
+		}
+
+		.shuru {
+			position: relative;
+			margin-bottom: 10px;
+		}
+
+		.shuru div {
+			border: none;
+			font-size: 25px;
+			line-height: 35px;
+			text-indent: 30px;
+			outline: none;
+			white-space: pre;
+			overflow-x: scroll;
+			float: right;
+			height: 42px;
+			width: 73%;
+			padding-top: 5px;
+		}
+
+		/* .shuru span {
+            position: absolute;
+            top: 5px;
+            font-size: 25px;
+            margin-left: 50px;
+        } */
+
+		.submit {
+			display: block;
+			margin: 20px auto 0;
+			width: 90%;
+			height: 40px;
+			font-size: 16px;
+			color: #fff;
+			background: #80D983;
+			border: 1px solid #47D14C;
+			border-radius: 3px;
+		}
+
+		/* 键盘 */
+
+		.form_edit {
+			width: 100%;
+			background: #dedede;
+		}
+
+		.form_edit>div {
+			margin-bottom: 1px;
+			margin-top: 5px;
+			margin-right: 6px;
+			float: left;
+			width: 32%;
+			height: 55px;
+			text-align: center;
+			color: #333;
+			line-height: 55px;
+			font-size: 18px;
+			font-weight: 600;
+			background-color: #fff;
+			border-radius: 5px;
+		}
+
+		.form_edit>div:nth-child(3n) {
+			margin-right: 0;
+		}
+
+		.form_edit>div:last-child {
+			background-color: #0ea5e9;
+		}
+	</style>
+	<script type="text/javascript">
+		setSize();
+        addEventListener('resize',setSize);
+        function setSize() {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth/750*100+'px';
+        }
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+            $('.layer-content').animate({
+                bottom: 0
+            }, 200);
+            $("#cursor").show();
+        });
+        var initData = function() {
+        };
+
+        var changeMoney = function() {
+            var money = $("#pay_money").val();
+            var reg = money.match(/\d+\.?\d{0,2}/);
+            var txt = '';
+            if (reg != null) {
+                txt = reg[0];
+            }
+            $("#pay_money").val(txt);
+            changeMoneyValue($("#pay_money").val());
+        };
+
+        var changeMoneyValue = function(money) {
+            if (money == "") {
+                money = 0;
+            }
+            if (money > 0) {
+                $("#btn_pay").removeClass("btn_disabled");
+            } else {
+                $("#btn_pay").addClass("btn_disabled");
+            }
+        };
+
+        function showMoney() {
+            $("#pay_money")[0].focus();
+        };
+	</script>
+</head>
+
+<body class="body_page" ontouchstart="">
+	<div class="wrap">
+
+
+
+		<div class="mer_pic">
+		</div>
+		<div class="business_name">
+
+
+			<p>东海县牛山一品味尚中式快餐</p>
+
+		</div>
+
+		<div class="p_1020">
+			<div class="input_item">
+				<span>支付金额</span>
+				<div class="shuru">
+					<div id="cursor" style="position: absolute;margin-top: 3px;margin-left: -31%;" class="animation">
+					</div>
+					<input type="text" id="pay_money" name="pay_money" style="font-size: 24px;width: 68%;opacity:1"
+                       placeholder="" maxlength="7"  value=""  readonly unselectable='on' onfocus='this.blur()'  />
+
+					<!--  <div id="pay_money" class='input'  maxlength="7" contenteditable="false" placeholder='0.00'></div> -->
+				</div>
+			</div>
+			<div style="display: none">
+				<input type="text" id="pay_remark" name="pay_remark"
+                   value="" />
+        </div>
+				<div class="show-list">
+					<a id="demo4">添加备注</a>
+				</div>
+				<div id="qqqqq"></div>
+				<div class="mt30" style="position: absolute;width: 89%;" onclick="pay();">
+					<p class="btn_pay">立即买单</p>
+				</div>
+				<div class="activity" style="margin-top: 85px">
+
+				</div>
+			</div>
+		</div>
+		<div class="layer"></div>
+
+
+		<div id="layercontent" class="layer-content">
+			<div class="form_edit clearfix">
+				<div class="num">1</div>
+				<div class="num">2</div>
+				<div class="num">3</div>
+				<div class="num">4</div>
+				<div class="num">5</div>
+				<div class="num">6</div>
+				<div class="num">7</div>
+				<div class="num">8</div>
+				<div class="num">9</div>
+				<div class="num">.</div>
+				<div class="num">0</div>
+				<div id="remove">删除</div>
+			</div>
+		</div>
+</body>
+<script>
+	$('#demo4').click(function () {
+        var content =  $("#pay_remark").val();
+        jqalert({
+            title:'提示',
+            prompt:'请输入备注：',
+            yestext:'确认',
+            notext:'取消',
+            content:content,
+            yesfn:function () {
+                $("#pay_remark").val($("#jqremark").val());
+            },
+            nofn:function () {
+
+            }
+        })
+    })
+</script>
+
+<script>
+	function pay(){
+        var payType = "2";
+        var merchantCode = "296785006";//商户编号
+        var storeCode = "S000000";
+        var barCode = "20190614108265";
+        var cashierNo = "C000000";
+        var channelcode = "002";
+        var staticQrcodeSingleAmountLimit = "500"; //静态码单笔限额
+        var deptNo = "320722032"; //机构号
+        var clearmode = "1"; //清算模式 0-T+0 1-T+1
+        var shopSeq = "mnt0032019061410305270500000"; //店铺编号
+        var termId = "20190614108265"; //终端号
+        var shopName = "东海县牛山一品味尚中式快餐"; //分店名
+        var isMainShop = "0"; //总分店，0 总店 1分店
+        var uuid = "f51591133b054f4ebeef5204d80f30e6";
+        var channelMchid = "3207220321A0000418";
+        if ($("#btn_pay").hasClass("btn_disabled")) {
+            return;
+        }
+        if(isNull(staticQrcodeSingleAmountLimit)){
+            staticQrcodeSingleAmountLimit = 500; //若没有正确获取单笔限额值,则自动初始化为500
+        }
+        var payMoney = $("#pay_money").val();
+        if (isNull(payMoney)) {
+            vm.showAlert("金额不能为空");
+            return ;
+        }
+        if (!ismoney(payMoney)) {
+            vm.showAlert("金额错误");
+            return ;
+        }
+        var amount = parseFloat(payMoney).toFixed(2);
+        if (amount <= 0) {
+            vm.showAlert("支付金额必须大于0");
+            return;
+        }
+        var remark = $("#pay_remark").val();
+        if(remark.length>0){
+            if(checks(remark)){
+                vm.showAlert('您输入了非法字符，请重新输入');
+                return;
+            }
+        }
+        if (amount > Number(staticQrcodeSingleAmountLimit)) {
+            if(confirm("根据监管要求,您单笔静态码付款金额已超限,请确认继续") == true){
+                $("#pay_money").val(amount);
+                var url = "http://www.js96008.com:1800/qrcwg/webservice/wx/create";
+                $.ajax({
+                    url : url,
+                    data :  {
+                        'merchantCode' : merchantCode,//商户编号
+                        'amount': amount,//交易金额
+                        'payType': payType,//扫码类型
+                        'storeCode':storeCode,//门店编号
+                        'barCode':barCode,//二维码编号
+                        'cashierNo':cashierNo,//收银台编号
+                        'channelcode':channelcode,//渠道编号
+                        'deptNo':deptNo,//机构号
+                        'clearmode':clearmode,//清算模式 0-T+0 1-T+1
+                        'shopSeq':shopSeq,//店铺编号
+                        'termId':termId,//终端号
+                        'shopName':shopName,//分店名
+                        'isMainShop':isMainShop,//总分店，0 总店 1分店
+                        'uuid':uuid,
+                        'remark':remark,//备注
+                        'channelMchid':channelMchid
+                    },
+                    dataType : "text",
+                    type : "POST",
+                    cache : false,
+                    success : function(result) {
+                        //error
+                        if(result.indexOf("http") < 0){
+                            vm.showAlert(result);
+                        }
+                        //success
+                        else{
+                            window.location.href = result;
+                        }
+                    }
+
+                });
+            }
+        }else{
+            $("#pay_money").val(amount);
+            var url = "http://www.js96008.com:1800/qrcwg/webservice/wx/create";
+            $.ajax({
+                url : url,
+                data :  {
+                    'merchantCode' : merchantCode,//商户编号
+                    'amount': amount,//交易金额
+                    'payType': payType,//扫码类型
+                    'storeCode':storeCode,//门店编号
+                    'barCode':barCode,//二维码编号
+                    'cashierNo':cashierNo,//收银台编号
+                    'channelcode':channelcode,//渠道编号
+                    'deptNo':deptNo,//机构号
+                    'clearmode':clearmode,//清算模式 0-T+0 1-T+1
+                    'shopSeq':shopSeq,//店铺编号
+                    'termId':termId,//终端号
+                    'shopName':shopName,//分店名
+                    'isMainShop':isMainShop,//总分店，0 总店 1分店
+                    'uuid':uuid,
+                    'remark':remark,//备注
+                    'channelMchid':channelMchid
+                },
+                dataType : "text",
+                type : "POST",
+                cache : false,
+                success : function(result) {
+                    //error
+                    if(result.indexOf("http") < 0){
+                        vm.showAlert(result);
+                    }
+                    //success
+                    else{
+                        window.location.href = result;
+                    }
+                }
+
+            });
+        }
+    }
+</script>
+<script>
+	$(function() {
+        //检查是否直接展示限额提示
+        var isOverLimit = "";
+        if(isOverLimit == 1){
+            vm.showOverLimit("尊敬的用户:","根据监管要求,您当日静态码付款金额已超限");
+        }
+    });
+    /**验证输入框是否非法字符  是非法字符 则返回true**/
+    function checks(remark){
+        var regEn = /[`!@#$%^&*()_+<>?:"{},.\/;'[\]]/im,
+            regCn = /[·！#￥（——）：；“”‘、，|《。》？、【】[\]]/im;
+        if(regEn.test(remark) || regCn.test(remark)) {
+            return true;
+        }
+        return false;
+    }
+</script>
+<script>
+	$(function(){
+
+        /*  //填写信息
+         $('.infor-sub').click(function(e){
+             $('.layer').hide();
+             $('.form').hide();
+             e.preventDefault();		//阻止表单提交
+         })
+         // 监听#div内容变化，改变支付按钮的颜色
+         $('#div').bind('DOMNodeInserted', function(){
+             if($("#div").text()!="" || $("#div").text()>'0'){
+                 $('.submit').removeClass('active');
+                 $('.submit').attr('disabled', false);
+             }else{
+                 $('.submit').addClass('active');
+                 $('.submit').attr('disabled', true);
+             }
+         })
+         $('#div').trigger('DOMNodeInserted'); */
+
+        $('.shuru').click(function(e){
+            $("#layercontent").show();
+            $('.layer-content').animate({
+                bottom: 0
+            }, 200)
+            e.stopPropagation();
+        })
+        $('.wrap').click(function(){
+            $("#layercontent").hide();
+            $('.layer-content').animate({
+                bottom: '-600px'
+            }, 200);
+        })
+
+        $('.form_edit .num').click(function(){
+            var oDiv = $("#pay_money").val();
+            oDiv += this.innerHTML;
+            if(oDiv.length>7){
+                vm.showAlert("金额过长！");
+                return;
+            }
+            $("#pay_money").val(oDiv);
+            if(oDiv.length>0){
+                $("#cursor").hide();
+            }
+        })
+        $('#remove').click(function(){
+            var oDiv = $("#pay_money").val();
+            var oDivHtml = oDiv;
+            oDiv = oDivHtml.substring(0,oDivHtml.length-1);
+            $("#pay_money").val(oDiv);
+            if(oDiv.length==0){
+                $("#cursor").show();
+            }
+        })
+    })
+</script>
+
+</html>
